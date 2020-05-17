@@ -11,4 +11,12 @@
     display: flex;
     justify-content: $justify-content;
     align-items: $align-items;
+    flex-wrap: wrap;
+}
+
+@mixin background-propreties {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }

@@ -1,10 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+
 @import "variables";
 @import "mixins";
 
 @include main();
 
 .container {
-    background: url("images/landscape.jpg");
+    @include background-propreties();
+    background-image: linear-gradient(to bottom, rgba(0, 1, 2, 0.5), rgba(0, 1, 2, 0.5)),
+        url("../assets/images/houses.jpg");
     width: 100%;
     height: 100vh;
+    position: relative;
+    .container-wrap {
+        @include flex(space-between, center);
+        width: 90%;
+        margin: 0 auto;
+        padding-top: 2rem;
+        font-size: 1.2rem;
+        line-height: 1.5;
+        font-weight: 400;
+        color: $primary-color;
+        .logo span {
+            color: $orange-color;
+            font-family: "Satisfy", cursive;
+        }
+        nav {
+            width: 65%;
+            ul {
+                @include flex(space-between, center);
+                list-style: none;
+                li a {
+                    text-decoration: none;
+                    padding-left: 0.3rem;
+                    color: $primary-color;
+
+                    &:hover {
+                        color: $orange-color;
+                    }
+                }
+            }
+        }
+    }
+
+    .headline {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+
+        span {
+            color: #31ff7a;
+            font-size: 2.5rem;
+            line-height: 1.2;
+            font-weight: 400;
+            font-family: "Satisfy", cursive;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 500;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+            color: $primary-color;
+            line-height: 1.3;
+        }
+
+        form {
+            width: 100%;
+            input[type="text"] {
+                padding: 15px;
+                font-size: 17px;
+                border: none;
+                border-top-left-radius: 50px;
+                border-bottom-left-radius: 50px;
+                float: left;
+                width: 80%;
+                font-weight: 400;
+                background: #f1f1f1;
+            }
+            .btn {
+                float: left;
+                width: 20%;
+                padding: 15px;
+                background: $orange-color;
+                color: $primary-color;
+                font-size: 17px;
+                border: none;
+                border-top-right-radius: 50px;
+                border-bottom-right-radius: 50px;
+                cursor: pointer;
+            }
+        }
+    }
 }
