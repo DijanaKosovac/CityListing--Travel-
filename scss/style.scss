@@ -11,6 +11,7 @@
         url("../assets/images/houses.jpg");
     width: 100%;
     height: 100vh;
+    background-attachment: fixed;
     position: relative;
     .container-wrap {
         @include flex(space-between, center);
@@ -51,7 +52,7 @@
         text-align: center;
 
         span {
-            color: #31ff7a;
+            color: $span-green;
             font-size: 2.5rem;
             line-height: 1.2;
             font-weight: 400;
@@ -93,5 +94,212 @@
                 cursor: pointer;
             }
         }
+    }
+}
+
+main {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 3.5rem;
+
+    span {
+        font-size: 2rem;
+        font-weight: 700;
+        color: $orange-color;
+        font-family: "Satisfy", cursive;
+    }
+    h3 {
+        font-size: 3rem;
+        color: #1c1930;
+        font-weight: 600;
+        margin-top: 2rem;
+        margin-bottom: 4rem;
+    }
+
+    .cards {
+        @include flex(space-between, center);
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        .card {
+            height: 300px;
+            width: 320px;
+            overflow: hidden;
+            position: relative;
+            img {
+                height: auto;
+                width: 320px;
+                border-radius: 10px;
+                filter: brightness(70%);
+            }
+            h4 {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: $primary-color;
+                font-size: 1.2rem;
+                letter-spacing: 3px;
+                font-weight: bold;
+                text-shadow: 1px 2px #000;
+            }
+        }
+    }
+}
+
+.promo {
+    @include background-propreties();
+    background-image: linear-gradient(to bottom, rgba(75, 0, 130, 0.7), rgba(0, 1, 2, 0.7)),
+        url("../assets//images/people-walking-on-street-near-buildings-2339009.jpg");
+    width: 100%;
+    height: 100vh;
+    @include flex(center, center);
+    .promo-wrap {
+        width: 90%;
+        margin: 0 auto;
+        text-align: center;
+
+        span {
+            color: $span-green;
+            font-family: "Satisfy", cursive;
+            font-weight: 500;
+            font-size: 2rem;
+        }
+
+        h2 {
+            font-weight: 600;
+            color: $primary-color;
+            font-size: 2.8rem;
+            margin-top: 1.5rem;
+        }
+
+        .promo-icons {
+            @include flex(space-around, center);
+            margin-top: 3rem;
+            .icon {
+                @include flex(center, center);
+                flex-direction: column;
+                color: $primary-color;
+                h3 {
+                    margin-top: 2rem;
+                    font-weight: 400;
+                }
+            }
+            .border-wrap {
+                @include flex(center, center);
+                width: 130px;
+                height: 130px;
+                border-radius: 50%;
+                animation: 1s animateBorder infinite;
+            }
+            .icon-wrap {
+                @include flex(center, center);
+                background-color: $primary-color;
+                width: 80px;
+                height: 80px;
+                border-radius: 50px;
+                .fa {
+                    color: $icon-color;
+                }
+            }
+        }
+    }
+}
+
+.offers {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 3rem;
+    span {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 5rem;
+        color: $orange-color;
+        font-family: "Satisfy", cursive;
+    }
+    h2 {
+        color: #1c1930;
+        font-weight: 600;
+        font-size: 2rem;
+        margin-top: 2rem;
+    }
+
+    .offer-container {
+        @include flex(space-around, center);
+        margin-top: 6rem;
+        width: 100%;
+        .offer {
+            flex: 1;
+            margin-left: 1rem;
+            width: 22%;
+            height: 100%;
+            border: 1px solid #e1ebf7;
+            padding: 5rem 2rem;
+            border-radius: 6px;
+            position: relative;
+            cursor: pointer;
+            &::before {
+                position: absolute;
+                content: "";
+                width: 100%;
+                height: 0;
+                background: #ff3d1c;
+                transition: 0.6s;
+                bottom: 0;
+                left: 0;
+                z-index: -1;
+                border-radius: 6px;
+            }
+            &:hover::before {
+                height: 100%;
+            }
+
+            &:hover small {
+                color: $primary-color;
+                font-weight: 400;
+            }
+            &:hover .fa {
+                color: $primary-color;
+            }
+
+            &:hover p {
+                color: $primary-color;
+            }
+            &:hover h4 {
+                color: $primary-color;
+                font-weight: 400;
+            }
+
+            .fa {
+                color: $icon-color;
+                margin-bottom: 2rem;
+            }
+
+            h4 {
+                font-size: 1.2rem;
+                font-weight: 700;
+                margin-bottom: 1.5rem;
+                color: black;
+            }
+            p {
+                margin-bottom: 1.3rem;
+                color: #57667e;
+                line-height: 30px;
+                font-weight: 400;
+            }
+            small {
+                color: #1c165c;
+                font-size: 16px;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+@keyframes animateBorder {
+    to {
+        box-shadow: 0 0 0 2px $span-green;
     }
 }
