@@ -353,6 +353,48 @@ main {
     }
 }
 
+footer {
+    background: #071b4d;
+    color: #fff;
+    margin-top: 5rem;
+    padding: 5rem;
+    .info-area {
+        @include flex(space-around, end);
+        .info {
+            .logo span {
+                color: $orange-color;
+                font-family: "Satisfy", cursive;
+            }
+            h3 {
+                font-weight: 400;
+                margin-bottom: 2rem;
+            }
+            ul {
+                li {
+                    list-style: none;
+                    padding-bottom: 1.5rem;
+                    a {
+                        color: #8ba4b1;
+                        font-weight: 300;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+    .author-info {
+        border-top: 1px solid #1c2e4c;
+        margin-top: 2rem;
+        color: #8ba4b1;
+        p {
+            margin-top: 2rem;
+            .fa-heart {
+                color: $icon-color;
+            }
+        }
+    }
+}
+
 @keyframes animateBorder {
     to {
         box-shadow: 0 0 0 2px $span-green;
