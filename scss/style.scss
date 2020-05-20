@@ -5,6 +5,10 @@
 
 @include main();
 
+html {
+    scroll-behavior: smooth;
+}
+
 .container {
     @include background-propreties();
     background-image: linear-gradient(to bottom, rgba(0, 1, 2, 0.5), rgba(0, 1, 2, 0.5)),
@@ -22,9 +26,15 @@
         line-height: 1.5;
         font-weight: 400;
         color: $primary-color;
+        .toggle {
+            width: 100%;
+            padding: 10px 20px;
+            background: #000;
+            display: none;
+        }
         .logo span {
             color: $orange-color;
-            font-family: "Satisfy", cursive;
+            font-family: $font-family-span;
         }
         nav {
             width: 65%;
@@ -35,7 +45,6 @@
                     text-decoration: none;
                     padding-left: 0.3rem;
                     color: $primary-color;
-
                     &:hover {
                         color: $orange-color;
                     }
@@ -55,7 +64,7 @@
             font-size: 2.5rem;
             line-height: 1.2;
             font-weight: 400;
-            font-family: "Satisfy", cursive;
+            font-family: $font-family-span;
         }
         h1 {
             font-size: 3.5rem;
@@ -147,7 +156,7 @@ main {
         text-align: center;
         span {
             color: $span-green;
-            font-family: "Satisfy", cursive;
+            font-family: $font-family-span;
             font-weight: 500;
             font-size: 2rem;
         }
@@ -201,7 +210,6 @@ main {
     }
     .offer-container {
         @include flex(space-around, center);
-        margin-top: 6rem;
         max-width: 1200px;
         .offer {
             margin-left: 1rem;
@@ -274,43 +282,6 @@ main {
     }
 }
 
-.clients {
-    @include flex(center, center);
-    flex-direction: column;
-    width: 80%;
-    margin: 0 auto;
-    padding: 3rem;
-    text-align: center;
-    span {
-        @include span-style();
-    }
-    h2 {
-        @include headline();
-    }
-    p {
-        margin-bottom: 1.3rem;
-        color: #57667e;
-        line-height: 30px;
-        font-weight: 400;
-    }
-    .profile-img {
-        @include flex(center, center);
-        width: 90px;
-        margin-bottom: 2rem;
-        img {
-            width: 100%;
-            height: auto;
-            border-radius: 50%;
-        }
-        p {
-            color: #eb566c;
-            font-size: 1rem;
-            font-weight: 600;
-            margin-top: 1.2rem;
-        }
-    }
-}
-
 .blog {
     width: 90%;
     margin: 0 auto;
@@ -353,17 +324,57 @@ main {
     }
 }
 
+.clients {
+    @include flex(center, center);
+    flex-direction: column;
+    width: 80%;
+    margin: 4rem auto;
+    padding: 2rem;
+    text-align: center;
+    span {
+        @include span-style();
+    }
+    h2 {
+        color: #1c1930;
+        font-weight: 600;
+        font-size: 2rem;
+        margin-bottom: 3rem;
+    }
+    p {
+        margin-bottom: 1.3rem;
+        color: #57667e;
+        line-height: 30px;
+        font-weight: 400;
+    }
+    .profile-img {
+        @include flex(center, center);
+        width: 90px;
+        margin-bottom: 2rem;
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+        }
+        p {
+            color: #eb566c;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-top: 1.2rem;
+        }
+    }
+}
+
 footer {
     background: #071b4d;
     color: #fff;
     margin-top: 5rem;
-    padding: 5rem;
+    padding: 3rem;
     .info-area {
         @include flex(space-around, end);
         .info {
             .logo span {
                 color: $orange-color;
-                font-family: "Satisfy", cursive;
+                font-family: $font-family-span;
             }
             h3 {
                 font-weight: 400;
@@ -398,5 +409,106 @@ footer {
 @keyframes animateBorder {
     to {
         box-shadow: 0 0 0 2px $span-green;
+    }
+}
+
+@include mobile-up {
+    .container {
+        .container-wrap {
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding-top: 0;
+            width: 100%;
+            background-color: #000;
+            .logo {
+                display: none;
+            }
+            .toggle {
+                display: block;
+                .fa-bars {
+                    color: $icon-color;
+                }
+            }
+            nav {
+                width: 80%;
+                ul {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    display: none;
+                    li {
+                        padding-bottom: 1rem;
+                    }
+                }
+                .active {
+                    display: block;
+                }
+            }
+        }
+        .headline {
+            top: 78%;
+            span {
+                font-size: 1.6rem;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            form {
+                input[type="text"] {
+                    width: 100%;
+                    border-radius: 50px;
+                    padding: 10px;
+                }
+                .btn {
+                    float: none;
+                    width: 50%;
+                    border-radius: 50px;
+                    margin-top: 1rem;
+                    padding: 10px;
+                }
+            }
+        }
+    }
+    main {
+        .cards {
+            justify-content: center;
+        }
+    }
+    .promo {
+        .promo-wrap {
+            .promo-icons {
+                .icon {
+                    h3 {
+                        margin: 0.5rem;
+                    }
+                }
+                .border-wrap {
+                    width: 90px;
+                    height: 90px;
+                    .icon-wrap {
+                        width: 60px;
+                        height: 60px;
+                    }
+                }
+            }
+        }
+    }
+    footer {
+        .info-area {
+            padding: 3rem;
+            justify-content: end;
+            flex-direction: column;
+            .info {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}
+
+@include tablet-up {
+    main {
+        .cards {
+            justify-content: center;
+        }
     }
 }

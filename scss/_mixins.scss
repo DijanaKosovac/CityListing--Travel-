@@ -35,3 +35,15 @@
     margin-bottom: 3rem;
     margin-top: 2rem;
 }
+
+@mixin mobile-up {
+    @media (max-width: $mobile) {
+        @content;
+    }
+}
+
+@mixin tablet-up {
+    @media (min-width: $mobile) and (max-width: $tablet) {
+        @content;
+    }
+}
