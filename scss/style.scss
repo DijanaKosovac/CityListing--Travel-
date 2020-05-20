@@ -52,7 +52,6 @@ html {
             }
         }
     }
-
     .headline {
         position: absolute;
         top: 50%;
@@ -102,7 +101,6 @@ html {
         }
     }
 }
-
 main {
     width: 90%;
     margin: 0 auto;
@@ -142,7 +140,6 @@ main {
         }
     }
 }
-
 .promo {
     @include background-propreties();
     background-image: linear-gradient(to bottom, rgba(75, 0, 130, 0.7), rgba(0, 1, 2, 0.7)),
@@ -196,7 +193,6 @@ main {
         }
     }
 }
-
 .offers {
     width: 90%;
     margin: 0 auto;
@@ -281,7 +277,6 @@ main {
         }
     }
 }
-
 .blog {
     width: 90%;
     margin: 0 auto;
@@ -323,7 +318,6 @@ main {
         }
     }
 }
-
 .clients {
     @include flex(center, center);
     flex-direction: column;
@@ -363,7 +357,6 @@ main {
         }
     }
 }
-
 footer {
     background: #071b4d;
     color: #fff;
