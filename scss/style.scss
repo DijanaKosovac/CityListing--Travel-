@@ -50,7 +50,6 @@
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
-
         span {
             color: $span-green;
             font-size: 2.5rem;
@@ -58,7 +57,6 @@
             font-weight: 400;
             font-family: "Satisfy", cursive;
         }
-
         h1 {
             font-size: 3.5rem;
             font-weight: 500;
@@ -67,7 +65,6 @@
             color: $primary-color;
             line-height: 1.3;
         }
-
         form {
             width: 100%;
             input[type="text"] {
@@ -102,30 +99,19 @@ main {
     margin: 0 auto;
     text-align: center;
     padding: 3.5rem;
-
     span {
-        font-size: 2rem;
-        font-weight: 700;
-        color: $orange-color;
-        font-family: "Satisfy", cursive;
+        @include span-style();
     }
-    h3 {
-        font-size: 3rem;
-        color: #1c1930;
-        font-weight: 600;
-        margin-top: 2rem;
-        margin-bottom: 4rem;
+    h2 {
+        @include headline();
     }
-
     .cards {
         @include flex(space-between, center);
         width: 100%;
         height: 100%;
-        overflow: hidden;
         .card {
             height: 300px;
             width: 320px;
-            overflow: hidden;
             position: relative;
             img {
                 height: auto;
@@ -159,21 +145,16 @@ main {
         width: 90%;
         margin: 0 auto;
         text-align: center;
-
         span {
             color: $span-green;
             font-family: "Satisfy", cursive;
             font-weight: 500;
             font-size: 2rem;
         }
-
         h2 {
-            font-weight: 600;
+            @include headline();
             color: $primary-color;
-            font-size: 2.8rem;
-            margin-top: 1.5rem;
         }
-
         .promo-icons {
             @include flex(space-around, center);
             margin-top: 3rem;
@@ -213,28 +194,23 @@ main {
     text-align: center;
     padding: 3rem;
     span {
-        font-size: 1.5rem;
-        font-weight: 700;
-        margin-bottom: 5rem;
-        color: $orange-color;
-        font-family: "Satisfy", cursive;
+        @include span-style();
     }
     h2 {
-        color: #1c1930;
-        font-weight: 600;
-        font-size: 2rem;
-        margin-top: 2rem;
+        @include headline();
     }
-
     .offer-container {
         @include flex(space-around, center);
         margin-top: 6rem;
-        width: 100%;
+        max-width: 1200px;
         .offer {
-            flex: 1;
             margin-left: 1rem;
-            width: 22%;
-            height: 100%;
+            width: 220px;
+            height: 425px;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            margin: 3rem 0;
             border: 1px solid #e1ebf7;
             padding: 5rem 2rem;
             border-radius: 6px;
@@ -293,6 +269,85 @@ main {
                 color: #1c165c;
                 font-size: 16px;
                 font-weight: 600;
+            }
+        }
+    }
+}
+
+.clients {
+    @include flex(center, center);
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+    padding: 3rem;
+    text-align: center;
+    span {
+        @include span-style();
+    }
+    h2 {
+        @include headline();
+    }
+    p {
+        margin-bottom: 1.3rem;
+        color: #57667e;
+        line-height: 30px;
+        font-weight: 400;
+    }
+    .profile-img {
+        @include flex(center, center);
+        width: 90px;
+        margin-bottom: 2rem;
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+        }
+        p {
+            color: #eb566c;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-top: 1.2rem;
+        }
+    }
+}
+
+.blog {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    span {
+        @include span-style();
+    }
+    h2 {
+        color: #1c1930;
+        font-weight: 600;
+        font-size: 2rem;
+        margin-top: 2rem;
+    }
+    .blog-posts {
+        @include flex(space-around, center);
+        max-width: 1200px;
+        .blog {
+            width: 370px;
+            height: 400px;
+            display: flex;
+            flex-wrap: wrap;
+            margin: 3rem 0;
+            img {
+                width: 100%;
+                height: 380px;
+                object-fit: cover;
+                object-position: center center;
+                border-radius: 15px;
+            }
+            .blog-headline {
+                margin: 1rem auto;
+                small {
+                    color: $orange-color;
+                }
+                h5 {
+                    margin-top: 1rem;
+                }
             }
         }
     }

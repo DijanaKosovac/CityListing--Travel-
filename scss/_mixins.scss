@@ -19,3 +19,19 @@
     background-position: center center;
     background-repeat: no-repeat;
 }
+
+@mixin span-style {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: $orange-color;
+    font-family: "Satisfy", cursive;
+}
+
+@mixin headline {
+    color: #1c1930;
+    font-weight: 600;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    margin-top: 2rem;
+}
