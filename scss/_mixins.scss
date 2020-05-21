@@ -47,3 +47,15 @@
         @content;
     }
 }
+
+@mixin desktop-up {
+    @media (min-width: $tablet) and (max-width: $desktop) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $desktop) {
+        @content;
+    }
+}
